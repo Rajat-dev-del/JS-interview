@@ -69,12 +69,64 @@
 // console.log(a);
 //  let a = 30; // Error: Cannot access 'a' before initialization
 
-myFunc();
-var myFunc = () => {
-    console.log('first');
-};
-myFunc();
-function myFunc(){
-    console.log('second')
-}
-myFunc();
+
+// myFunc();
+// var myFunc = () => {
+//     console.log('first');
+// };
+// myFunc();
+// function myFunc(){
+//     console.log('second')
+// }
+// myFunc();
+
+//internal js working
+// function myFunc(){
+//     console.log('second')
+// } // due to Hoisting
+// myFunc();// second
+// var myFunc = () => {
+//     console.log('first');
+// }; // only function declaration move at top not expressions
+// myFunc(); //first
+// myFunc(); // first
+
+
+// foo = 20;
+// console.log(foo);//20
+// var foo = 100;
+// console.log(foo);//100
+
+
+// variable = 10;
+// (()=>{
+//     foo = 100;
+//     console.log(variable);//10
+//     var foo = 100;
+//     variable = 20;
+//     console.log(variable);//20
+// })();
+// console.log(foo);//error
+// console.log(variable);//20
+// var variable = 30;
+
+// (()=>{
+//     console.log(variable);//undefined
+//     var variable = 10;
+//     console.log(variable);//20
+// })();
+// console.log(variable);//Error variable is not defined
+
+
+// let i=10;
+// for( i=0;i<5;i++){
+//     setTimeout(()=>{console.log(i)},0)
+// }
+
+
+
+// var i =0;
+// for(i=0;i<5;i++){
+//     setTimeout(()=> {console.log(i)},0)
+// }
+
