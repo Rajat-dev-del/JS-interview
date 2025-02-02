@@ -183,3 +183,50 @@
 // console.log(obj.getFullname()); //hacked full name
 // console.log(obj.getFullname2());//undefined
 // console.log(obj.getFullname3);// with 'use strict' -> Error, without -> undefined
+
+
+
+// const rajat = {
+//     name : 'rajat',
+//     sayName: function(){
+//         return this.name;
+//     }
+// }
+// const john = {
+//     name : 'john',
+//     sayName: function(){
+//         return this.name;
+//     }
+// }
+
+// const result = john.sayName.call(rajat);
+// console.log(result); //Output-> rajat
+
+// Note:
+// call() invokes sayName() from john, but with `this` set to the rajat object.
+// So, inside sayName(), `this` refers to rajat, and it returns rajat.name, which is 'rajat'.
+
+
+// const rajat = {
+//     name :'rajat',
+//     sayName:function(){
+//         console.log(this.name);
+//     },
+// };
+// setTimeout(()=>{rajat.sayName()},3*1000); // after 3 second it will print `rajat`
+
+
+// const obj = {
+//     height:30,
+// }
+// console.log(obj.height); // 30
+// delete obj.height;
+// console.log(obj.height); // undefined
+
+
+// const obj = Object.create({
+//     height:30,
+// }) 
+// console.log(obj.height);// 30
+// delete obj.height;
+// console.log(obj.height);// 30 ->In Object.create, delete doesnt work bcuz values are stored in prototype of obj.
