@@ -1,5 +1,4 @@
 'use strict'
-// console.log("Try programiz.pro");
 
 // let a = {
 //     name:'rajat'    
@@ -130,3 +129,57 @@
 //     setTimeout(()=> {console.log(i)},0)
 // }
 
+
+// function test() {
+//     var c = 30;  // Function-scoped
+//     let d = 40;  // Function-scoped
+// }
+
+// console.log(c); //  ReferenceError: c is not defined
+// console.log(d); //  ReferenceError: d is not defined
+
+
+// if (true) {
+//     var a = 10;  // Function-scoped (Leaked outside)
+//     let b = 20;  // Block-scoped (Only inside `if`)
+// }
+
+// console.log(a); //  10 (Accessible outside)
+// console.log(b); //  ReferenceError: b is not defined
+
+
+// for (var i = 0; i < 3; i++) {
+//     setTimeout(() => console.log(i), 0);
+// }
+
+// for (let j = 0; j < 3; j++) {
+//     setTimeout(() => console.log(j), 0);
+// }
+
+// 3 3 3   `var` (Function-scoped, same `i`)
+// 0 1 2   `let` (Block-scoped, new `j` per iteration)
+
+
+// var fullname = `Rajat Srivastava`;
+// var obj ={
+//     fullname : `hacked full name`,
+
+//     prop: {
+//         fullname:`inside prop`,
+//         getFullname: function () {
+//             return this.fullname;
+//         },
+//     },
+//     getFullname: function () {
+//         return this.fullname
+//     },
+//     getFullname2:() => this.fullname,
+//     getFullname3: (function () {
+//         return this.fullname;
+//     })(),
+// };
+
+// console.log(obj.prop.getFullname());//inside prop
+// console.log(obj.getFullname()); //hacked full name
+// console.log(obj.getFullname2());//undefined
+// console.log(obj.getFullname3);// with 'use strict' -> Error, without -> undefined
