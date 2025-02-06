@@ -33,6 +33,6 @@
 // -------------------- On Page Load ---------------------------
 
 
-window.addEventListener('load', fetchData);
+// window.addEventListener('load', fetchData);
 
 

@@ -230,3 +230,174 @@
 // console.log(obj.height);// 30
 // delete obj.height;
 // console.log(obj.height);// 30 ->In Object.create, delete doesnt work bcuz values are stored in prototype of obj.
+
+
+// for(var i=0;i<3;i++ ){
+//     setTimeout(()=>{console.log(i)},1)
+// }
+// output : 3 3 3 due to global scope and seTtimeout will will return 3 after the completion of loop.
+
+
+// let data = "size";
+// const bird = {
+//     size: "small"
+// };
+// console.log(bird[data]);//small
+// console.log(bird["size"]);//small
+// console.log(bird.size);//small
+// console.log(bird.data);//undefined
+// console.log(bird)//{size:'small'}
+
+
+// let c = {name:"rajat"};
+// let d;
+
+// d = c;
+// c.name = 'srivastava';
+// console.log(d.name); // srivastava : object stored reference not values of the varible in momory. if one variable changes other will also changes.
+
+
+// let a = 3;
+// let b = new Number(3);
+// console.log(a == b); // True
+// console.log(a === b); // False : number is not equal to object
+// console.log(typeof(a == b), typeof(a === b)); // boolean, boolean
+// console.log(typeof( a, b));// number, Object
+
+
+// let name;
+// nmae = {}; // Typo
+// console.log(name) // nmae is not defined
+
+
+// let number = 0;
+// console.log(number++); // 0 : number will print 0 first then will increment to 1
+// console.log(++number); // 2 : 1+1
+// console.log(number); // 2
+
+
+// function getAge(...args){
+//     console.log((args)); // return Array with element [21] 
+//     console.log(typeof(args)); // Object : in Js, Arrays are Objects
+// }
+// getAge(21);
+
+
+// function getAge(){
+//     'use strict';
+//     age = 21;
+//     console.log(age); // Error: age is not defined
+// }
+// getAge();
+
+
+// How long is cool_session accessible?
+// session.storage.setItem("cool_session",123); // gets Removed once Tab/Browser is closed
+
+
+// const obj = {1:'a',2:'b',3:'c'};
+// console.log(obj.hasOwnProperty('1'));//true : hasOwnProperty accepts both string and number value
+// console.log(obj.hasOwnProperty(1));//true
+
+
+// const obj = {a:'one', b:'two', a:'three'};
+// console.log(obj) // {a:'three', b:'two'} // a will override but position of key will be same
+
+
+// for(let i =1;i<5;i++){
+//     if(i==3) continue;
+//     console.log(i); // 1 2 4
+// }
+// for(let i =1;i<5;i++){
+//     if(i==3) break;
+//     console.log(i); // 1 2 
+// }
+
+
+// const foo = () => console.log('first');
+// const bar = () => setTimeout(()=>console.log('second'),1);
+// const buz = () => console.log('third');
+// bar();
+// foo();
+// buz();
+// Output:  first, third, second
+
+
+// const person = { name : 'linda'};
+// function getName(age){
+//     return `${this.name}, ${age}`;
+// }
+// console.log(getName.call(person, 21)); // linda, 21
+// console.log(getName.bind(person, 21)); // returns  getName() function
+// console.log(getName.bind(person, 21)()); //linda, 21: call getName() function so will return -> linda, 21
+
+
+// function sayHi(){
+//     return (()=>0)(); //IIFE
+// }
+// console.log(sayHi()); // 0
+// console.log(typeof sayHi()); // number
+
+
+// function sayHi(){
+//     return () => 0; //Not IIFE
+// }
+// console.log(sayHi()); // () => 0
+// console.log(typeof sayHi()); // function
+
+
+// console.log(typeof 1);
+// console.log(typeof typeof 1);
+
+// console.log(typeof typeof 42);          // string
+// console.log(typeof typeof true);        // string
+// console.log(typeof typeof undefined);   // string
+// console.log(typeof typeof []);          // string
+// console.log(typeof typeof function(){});// string
+
+// console.log(typeof null) // object
+// console.log(typeof NaN); // number
+// console.log(typeof undefined); // undefined
+// console.log(typeof []); // object
+// console.log(typeof {}); // object
+// console.log(typeof function(){}); // function
+
+
+// const numbers = [1,2,3];
+// numbers[9] = 11;
+// console.log(numbers); // [1, 2, 3, empty × 6, 11] 
+// console.log(numbers[5]); // undefined
+
+
+// const numbers = [1,2,3];
+// numbers[3] = numbers;
+// console.log(numbers) // [1,2,3,[1,2,3]] at index 4 it will have same nested number array(array inside array)
+
+
+// console.log(!!null); // false
+// console.log(!!''); // false
+// console.log(!!1); // true
+
+// console.log([... "hello"]); // ['h', 'e', 'l', 'l', 'o']
+// console.log({... "hello"}); // {0: 'h', 1: 'e', 2: 'l', 3: 'l', 4: 'o'}
+// console.log(typeof 7+4+'5'); // number45
+
+
+// console.log([]==[]) // false
+// console.log([]===[]) // false
+
+
+// const data = [1,2,3].map((num)=>{
+//     if(typeof num == 'number') return;
+//     return num*2;
+// })
+// console.log(data); // [undefined, undefined, undefined]; 
+
+
+// const getInfo = (member) =>{
+//     member.name = 'anil'
+// }
+// const person = {name:'rajat'};
+
+// getInfo(person);
+// console.log(person); // anil
