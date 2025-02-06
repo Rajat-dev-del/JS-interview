@@ -444,3 +444,137 @@
 
 // console.log(typeof (true + + '10')) // number
 // console.log( (true + + '10')) // 11
+
+
+// what are generator functions?
+// function that can be paused and resumed during execution using the yield keyword. It is defined using function* syntax.
+
+// function* getmultipleValue(){
+//     yield 10;
+//     yield 20;
+// }
+// const result = getmultipleValue();
+
+// console.log(result.next()) // {value: 10, done: false}
+// console.log(result.next().value) // 10
+// console.log(result.next().value) // 20
+// console.log(result.next()) // {value: undefined, done: true}
+
+
+// const person = {
+//     name:'rajat',
+//     age:28,
+// }
+
+// Output 1: [["name","rajat"],["age","28"]]
+// const array =  Object.entries(obj);
+// console.log(array); // Convert Object Entries to Array (Key-Value Pairs)
+
+// Output 2:[{key: 'name', value: 'rajat'},{key: 'age', value: 28}]
+// const customArray = Object.entries(obj).map(([key, value]) => ({ key, value }));
+// console.log(customArray); // Convert Object to an Array of Custom Format
+
+
+// const obj = { a: 1, b: 2, c: 3 };
+// const keysArray = Object.keys(obj);
+// console.log(keysArray); // ['a', 'b', 'c']  Convert Object Keys to Array
+
+
+// const obj = { a: 1, b: 2, c: 3 };
+// const valuesArray = Object.values(obj);
+// console.log(valuesArray); // [1, 2, 3] Convert Object Values to Array
+
+// Add on question
+
+// const person = {
+//     name:'rajat',
+//     age:28,
+// }
+
+// Output 1: [["name","rajat"],["age","28"]] without Object.entries()
+//Solution: will use Object.keys and map to retun [[key,value]]
+
+// const getObjectEntries = (obj) =>{
+//     const keys = Object.keys(person);
+//     // console.log(keys); // ['name', 'age']
+//     const result = keys.map((key)=>{
+//         const value = obj[key]; // obj[name] , obj[age]
+//         // console.log(value)// rajat , 28
+//         return [key, value]
+//     } )
+//     console.log(result)
+// }
+// getObjectEntries(person);
+
+
+// const data ='<h1 style="color:red;">Hello Rajat</h1>';
+// document.getElementById('root').textContent = data;
+
+
+// 'use strict';
+
+// let x = `{
+//     "b": 1,
+//     "c": 2
+// }`;
+// let y = JSON.parse(x);  
+// console.log(typeof y)
+
+
+
+// let x = 1;
+// let y = '1';
+// console.log(++x,++y)
+
+
+// let x = "b";
+// let y = 'a';
+// console.log(x+y+ +y+y) //
+
+
+// const a = {
+//     b:{
+//         c:2
+//     }
+// }
+// const b = {...a}
+// a.b.c = 3;
+// console.log(b);
+
+// let x = [1,2,3];
+// let [, ,y] = x;
+// console.log(y)
+
+
+// let x = {a:1,b:2};
+// let y = {b:3};
+// let z = {...x,...y};
+// console.log(z)
+
+// let x = [1,2,3];
+// let y = x.map((num)=>{
+//     x.push(num+3);
+//     return num+1
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
