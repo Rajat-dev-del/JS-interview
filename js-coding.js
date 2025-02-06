@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // let a = {
 //     name:'rajat'    
@@ -401,3 +401,46 @@
 
 // getInfo(person);
 // console.log(person); // anil
+
+// function Car() {
+//     this.make = 'tata';
+//     return {make:'kia'}
+// }
+// const myCar = new Car();
+// console.log(myCar) // kia
+
+
+// (()=>{
+//     let x = (y = 10);
+// })();
+// console.log(typeof x) // undefined x is block scope
+// console.log(typeof y) // number :  y is 7 cuz y will be var by default hence global scope
+
+
+// (()=>{
+//     let x = 10;
+// })();
+// (()=>{
+//     let x = 10;
+// })();
+// console.log(typeof x); // undefined
+
+
+// (()=>{
+//     let x = y = 10;
+// })();
+// (()=>{
+//     let x = y = 20;
+// })();
+// console.log(y); // 20
+
+
+// let x = 100;
+// (()=>{
+//     var x = 20;
+//     console.log(x) // 20
+// })();
+// console.log(x) // 100 
+
+// console.log(typeof (true + + '10')) // number
+// console.log( (true + + '10')) // 11
